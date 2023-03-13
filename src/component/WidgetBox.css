@@ -1,0 +1,19 @@
+.widget-box {
+    background-color: var(--content-background-color);
+    padding: 45px 25px 30px;
+    border-radius: 15px;
+    margin-bottom: 70px;
+}
+
+.position-cont .widget-box {
+    border: 1px solid var(--border-color)
+}
+.footer .widget-box {
+    border: none;
+    padding: 55px 45px 30px;
+    margin-bottom: 0;
+}
+.widget-title {
+    border: 1px solid var(--border-color);
+    padding: 4px 25px;
+}

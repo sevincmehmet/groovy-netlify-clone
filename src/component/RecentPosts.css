@@ -1,0 +1,34 @@
+.recent-cont {
+    display: block;
+    margin-bottom: 20px;
+   
+}
+.recent-img-cont {
+    /* background-image: url("https://themes.estudiopatagon.com/wordpress/groovy/wp-content/uploads/2019/07/layered-number-one-stylized-typography_53876-96387-150x150.jpg"); */
+    background-size: auto 100%;
+    height: 65.6px;
+    width: 61.6px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-repeat: no-repeat;
+    position: absolute;
+
+    border: 1px solid var(--border-color);
+    -webkit-transition: all .3s var(--transition-bezier);
+    -o-transition: all .3s var(--transition-bezier);
+    transition: all .3s var(--transition-bezier);
+}
+
+.recent-img-cont:hover{
+    -webkit-transform: translate(-1px,-1px);
+    -ms-transform: translate(-1px,-1px);
+    transform: translate(-1px,-1px);
+    -webkit-box-shadow: var(--small-shadow);
+    box-shadow: var(--small-shadow);
+}
+.recent-cont .article {
+    height: 65.6px;
+}
+.recent-cont .article .underline-effect .recent-title {
+    font-size: 15px;
+}

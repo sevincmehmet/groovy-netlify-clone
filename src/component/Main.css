@@ -1,0 +1,104 @@
+.main-cont {
+    height: auto;
+}
+
+#footerRecentPosts {
+    padding: 55px 34px 30px;
+}s
+.smal-cont {
+    height: auto;
+    width: 95.8%;
+    margin: 0 auto;
+}
+
+.smal-cont .row {
+    width: 99.88%;
+    margin: 0 auto;
+}
+
+.left-cont {
+    padding-right: 0px;
+}
+
+.right-cont {
+    padding-left: 60px;
+}
+
+.t-300 {
+    position: relative;
+    top: 230px;
+}
+
+.link-tag-text {
+    font-size: 14px;
+}
+@media (max-width: 1360.98px) {
+    #footerRecentPosts {
+        padding: 55px 20px 30px;
+    }
+}
+@media (max-width: 1299.98px) {
+    #footerRecentPosts {
+        padding: 55px 10px 30px;
+    }
+}
+@media (max-width: 1023.98px) {
+    .write-cont-article {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .left-cont {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1200.98px) {
+    .write-cont-title a {
+        font-size: 28px;
+    }
+
+    .write-cont-text {
+        font-size: 14px;
+    }
+
+    .write-cont .link-tag {
+        font-size: 13px;
+    }
+    .link-tag-text {
+        font-size: 13px;
+    }
+
+    .write-cont {
+        padding-left: 30px;
+    }
+
+    .min {
+        display: none;
+    }
+    .right-cont {
+        padding-left: 40px;
+    }
+    .img-cont img {
+        width: 250px;
+    }
+    .userName {
+        font-size: 16px;
+    }
+    .about-text {
+        line-height: 1.8;
+    }
+    .recent-cont .article .underline-effect .recent-title {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .right-cont {
+        padding-left: 0px;
+    }
+}
+@media (max-width: 767.98px) {
+    .category-cont {
+        display: block;
+    }
+}

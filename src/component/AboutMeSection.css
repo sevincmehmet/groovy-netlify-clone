@@ -1,0 +1,30 @@
+.widget-title {
+    display: inline-flex;
+    justify-content: center;
+    width: 143.45px;
+    height: 37.6px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #fff;
+    align-items: center;
+    position: absolute;
+    top: -18.8px
+}
+
+.about-profile {
+    width: 100%;
+}
+
+.f-source {
+    font-family: var(--source);
+}
+.fw-400 {
+    font-weight: 400;
+}
+.userName {
+    font-weight: "800"; 
+    font-size: 18px;
+}
+.about-text {
+    line-height: 2;
+}
