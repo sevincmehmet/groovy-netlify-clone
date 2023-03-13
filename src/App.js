@@ -1,9 +1,9 @@
-import Navbar from "./component/Navbars"
+import Main from "./component/Main"
 import './App.css';
 
 function App() {
   return(<>
-    <Navbar/>
+    <Main />
   </>)
 }
 
