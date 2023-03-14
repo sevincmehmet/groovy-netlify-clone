@@ -1,9 +1,14 @@
-import "./Navbars.css";
+import { useState } from "react";
 import logo from "./assets/logo-groovy.png";
 import arrFollow from "./data/arrFallow";
+import SearchModal from "./SearchModal"
+import "./Navbars.css";
 const Navbars = ({ scrolActive, screenSize }) => {
+const [seacrhModalActive, setSearchModalActive] = useState(false)
+
     return (
         <>
+        {/* <SearchModal active={setSearchModalActive} setActive={setSearchModalActive}/> */}
             <nav
                 className={
                     scrolActive || screenSize <767.98
@@ -135,7 +140,7 @@ const Navbars = ({ scrolActive, screenSize }) => {
                             </li>
                             <li>
                                 <div className="nav-icons d-flex">
-                                    <i className="ms-3 me-3 fa-sharp fa-solid fa-magnifying-glass nav-item"></i>
+                                    <i className="ms-3 me-3 fa-sharp fa-solid fa-magnifying-glass nav-item" onClick={() => setSearchModalActive(!seacrhModalActive)}></i>
                                     <div className={screenSize<1399.98 ? "d-none" : ""}>
                                         {arrFollow.map((oItem, oIndex) => {
                                             return (
