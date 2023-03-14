@@ -39,6 +39,9 @@
     color: var(--black-color);
     padding: 10px 7.5px 10px 6.5px;
 }
+
+
+
 .dropbtn {
     color: var(--black-color);
     margin: 0 px;
@@ -54,7 +57,17 @@
     position: relative;
     display: inline-block;
   }
-  
+  .dropdown-link-content {
+    display: none;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    background-color: var(--white-color);
+    min-width: 160px;
+    z-index: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+  }
   .dropdown-content {
     display: none;
     position: absolute;
@@ -76,7 +89,8 @@
   .dropdown-content a:hover {color: var(--main-color);}
   
   .dropdown:hover .dropdown-content {display: block;}
-  
+  .dropdown-item:hover .dropdown-link-content {display: block;}
+  .dropdown-item:hover .dropbtn {width: 200%;}
   .logo-position {
     position: absolute;
     left: 8.4rem
