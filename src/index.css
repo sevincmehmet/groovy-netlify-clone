@@ -35,7 +35,11 @@ body {
   position: absolute;
  height: 100%;
  width: 100%;
- 
+ background-image: url('https://themes.estudiopatagon.com/wordpress/groovy/wp-content/themes/groovy/assets/images/background-decoration.svg'), url('https://themes.estudiopatagon.com/wordpress/groovy/wp-content/themes/groovy/assets/images/background-decoration.svg');
+ background-position: left, right;
+ background-size: 23% 90%;
+ background-repeat: no-repeat, no-repeat;
+ background-attachment: fixed, fixed 
 }
 
 code {

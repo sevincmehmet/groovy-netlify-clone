@@ -1,12 +1,12 @@
 import "./Navbars.css";
 import logo from "./assets/logo-groovy.png";
 import arrFollow from "./data/arrFallow";
-const Navbars = ({ scrolActive }) => {
+const Navbars = ({ scrolActive, screenSize }) => {
     return (
         <>
             <nav
                 className={
-                    scrolActive
+                    scrolActive || screenSize <767.98
                         ? "navsActive navbar navbar-expand-xl navbar-light "
                         : "navs navbar navbar-expand-xl navbar-light "
                 }
@@ -136,7 +136,7 @@ const Navbars = ({ scrolActive }) => {
                             <li>
                                 <div className="nav-icons d-flex">
                                     <i className="ms-3 me-3 fa-sharp fa-solid fa-magnifying-glass nav-item"></i>
-                                    <div className={scrolActive ? "d-none" : ""}>
+                                    <div className={screenSize<1399.98 ? "d-none" : ""}>
                                         {arrFollow.map((oItem, oIndex) => {
                                             return (
                                                 <i

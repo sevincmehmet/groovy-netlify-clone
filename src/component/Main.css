@@ -17,10 +17,12 @@
 }
 
 .left-cont {
-    padding-right: 0px;
+    padding-right: 9px;
+    padding-left: 28px;
 }
 
 .right-cont {
+    padding-right: 27px;
     padding-left: 60px;
 }
 
@@ -32,6 +34,7 @@
 .link-tag-text {
     font-size: 14px;
 }
+
 @media (max-width: 1360.98px) {
     #footerRecentPosts {
         padding: 55px 20px 30px;
@@ -42,15 +45,7 @@
         padding: 55px 10px 30px;
     }
 }
-@media (max-width: 1023.98px) {
-    .write-cont-article {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-    }
-    .left-cont {
-        padding: 0;
-    }
-}
+
 
 @media (max-width: 1200.98px) {
     .write-cont-title a {
@@ -73,14 +68,14 @@
     }
 
     .min {
-        visibility: hidden;
+        opacity: 0;
     }
     .profile {
-        visibility: hidden;
+        opacity: 0;
     }
-    .right-cont {
+    /* .right-cont {
         padding-left: 40px;
-    }
+    } */
     .img-cont img {
         width: 250px;
     }
@@ -93,11 +88,36 @@
     .recent-cont .article .underline-effect .recent-title {
         font-size: 13px;
     }
+    
 }
-
+@media (max-width: 1023.98px) {
+    .write-cont-article {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .left-cont {
+        padding: 0;
+    }
+    .main-cont {
+        padding: 0 40px;
+    }
+    .left-cont {
+        padding-right: 16.5px;
+    }
+    .right-cont {
+        padding: 0;
+    }
+}
 @media (max-width: 991.98px) {
     .right-cont {
-        padding-left: 0px;
+        display: none;
+    }
+    .write-cont-article {
+        margin-top: 0.7rem;
+        margin-bottom: 0.7rem;
+    }
+    .category-cont {
+        margin-bottom: 50px;
     }
 }
 @media (max-width: 767.98px) {
@@ -109,7 +129,43 @@
         height: 225px;
     }
     .img-cont img {
-        object-fit:auto;
+        object-fit:cover;
+        height: 100%;
         width: 100%;
+    }
+    .write-cont-header .link-tag {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    .write-cont-article {
+        margin: 0;
+    }
+    .min {
+        opacity: 1;
+    }
+    .date {
+        margin-left: 0;
+    }
+    .category-cont{
+        margin-bottom: 25px;
+    }
+    .write-cont {
+        padding: 10px;
+    }
+    .write-cont-title a{
+        font-size: 22px;
+    }
+    .write-cont-text {
+        font-size: 13px;
+    }
+    .write-cont-footer {
+        margin-top: 10px;
+    }
+    .main-cont {
+        margin-top: 7.2rem;
+    }
+    .footer-down {
+        display: none;
     }
 }

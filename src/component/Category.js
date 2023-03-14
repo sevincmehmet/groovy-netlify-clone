@@ -29,7 +29,7 @@ const Category = () => {
                                             src={oItem.linkTagIcon} width={10} />
                                         {oItem.linkTag}
                                     </button>
-                                    <div className="date d-flex align-items-center ms-3 f-source">
+                                    <div className="date d-flex align-items-center f-source">
                                         {oItem.date}
                                     </div>
                                     <div className="min d-flex align-items-center ms-3 f-source ">
@@ -49,7 +49,7 @@ const Category = () => {
 
                                 <div className=" d-flex write-cont-footer justify-content-between">
                                     <button className="buttons float-start f-source">
-                                        Continue Reading -{">"}
+                                        Continue Reading 
                                     </button>
                                     <div className="d-flex  align-items-center profile float-end f-source" style={{ fontSize: "14px", color: "#424851", fontWeight: "600" }}>
                                         <div className=" profile-photo ">

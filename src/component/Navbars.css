@@ -1,7 +1,7 @@
 .navs {
     border-radius: 100px;
     background-color: var(--white-color);
-    margin:3.8rem 0 4.4rem;
+    margin:3.8rem 28px 4.4rem;
     padding: 1.55rem 2.86rem ;
     border: 1px solid var(--border-color);
     font-family: var(--Outfit);

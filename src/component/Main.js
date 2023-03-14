@@ -43,7 +43,7 @@ const Main = () => {
         <>
             <div className="container-xl main-cont">
                 <div className="smal-cont">
-                    <Navbars scrolActive={scrolActive} />
+                    <Navbars scrolActive={scrolActive} screenSize={windowSize[0]} />
                     <div
                         className={scrolActive ? "row t-300" : "row"}
                         style={{ height: "100%" }}
