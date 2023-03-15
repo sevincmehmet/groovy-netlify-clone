@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import logo from "./assets/logo-groovy.png";
-import arrFollow from "./data/arrFallow";
 import SearchModal from "./SearchModal";
 import ImagesPath from "./assets/images/ImagesPath";
+import arrNavItem from "./data/arrNavItem";
+import arrFollow from "./data/arrFallow"
 import "./Navbars.css";
+import arrCategory from "./data/arrCategory";
 
 const Navbars = ({ scrolActive, screenSize }) => {
     const [searchModalActive, setSearchModalActive] = useState(false);
@@ -53,7 +55,7 @@ const Navbars = ({ scrolActive, screenSize }) => {
                 }
             >
                 <div className={scrolActive ? "container-fluid" : "container-fluid"}>
-                    
+
 
                     <a
                         className={scrolActive ? "logo-div logo-position" : "logo-div"}
@@ -67,7 +69,7 @@ const Navbars = ({ scrolActive, screenSize }) => {
                             alt="logo"
                         />
                     </a>
-                    <div id="searchIcon" onClick={()=> {
+                    <div id="searchIcon" onClick={() => {
                         setSearchModalActive(!searchModalActive)
                     }} >
                         <img
@@ -86,98 +88,40 @@ const Navbars = ({ scrolActive, screenSize }) => {
                         }
                         id="navbarSupportedContent"
                     >
-                        <ul className="float-end navbar-nav me-auto mb-2 mb-lg-0">
-                            <li>
-                                <div className="nav-item dropdown">
-                                    <button className=" dropbtn" style={{ padding: "1px 6px" }}>
-                                        Home
-                                        <i className="ps-2 fa-solid fa-caret-down"></i>
-                                    </button>
-                                    <div className="dropdown-content">
-                                        <div>
-                                            <div className="dropdown-item">
-                                                <button className=" dropbtn">link 1</button>
-                                                <div className="dropdown-link-content">
-                                                    <a href="#">Link 1</a>
-                                                    <a href="#">Link 2</a>
-                                                    <a href="#">Link 3</a>
-                                                </div>
-                                            </div>
+                        <ul style={{ zIndex: 9, marginLeft: 17 }} className="nested-dropdowns float-end navbar-nav me-auto mb-2 mb-lg-0">
+
+                            {arrNavItem.map((oItem, oIndex) => {
+                                return (
+                                    <li className="navbar-item" key={oIndex}>
+                                        <div className="nested-dropdowns__item d-flex">
+                                            {oItem.dropdownLink}
+                                            {oItem.arrDropdownItem && <>
+                                                <img src={ImagesPath.dropIcon} alt="dropIcon" width={20} />
+                                            </>}
                                         </div>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="nav-item dropdown">
-                                    <button className="dropbtn ">
-                                        Header Styles
-                                        <i className="ps-2 fa-solid fa-caret-down"></i>
-                                    </button>
-                                    <div className="dropdown-content">
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="nav-item dropdown">
-                                    <button className="dropbtn ">
-                                        Post Features
-                                        <i className="ps-2 fa-solid fa-caret-down"></i>
-                                    </button>
-                                    <div className="dropdown-content">
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="nav-item dropdown">
-                                    <button className="dropbtn ">
-                                        #Tag
-                                        <i className="ps-2 fa-solid fa-caret-down"></i>
-                                    </button>
-                                    <div className="dropdown-content">
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div
-                                    className="nav-item dropbtn"
-                                    style={{ padding: "1px 6px" }}
-                                >
-                                    <a href="#">Author</a>
-                                </div>
-                            </li>
-                            <li>
-                                {" "}
-                                <div className="nav-item dropdown">
-                                    <button className="dropbtn ">
-                                        Features
-                                        <i className="ps-2 fa-solid fa-caret-down"></i>
-                                    </button>
-                                    <div className="dropdown-content">
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div
-                                    className="nav-item dropbtn"
-                                    style={{ padding: "1px 6px" }}
-                                >
-                                    <a href="#">Contact</a>
-                                </div>
-                            </li>
+                                        <ul>
+                                            {oItem.arrDropdownItem &&
+                                                (oItem.arrDropdownItem).map((linkItem, linkIndex) => {
+                                                    return (
+                                                        <li key={arrCategory + linkIndex}>
+                                                            {linkItem.dropdownItemLinkName}
+
+                                                            <ul>
+                                                                {linkItem.dropdownItemsItemLink && linkItem.dropdownItemsItemLink.map((oItem, oIndex) => {
+                                                                    return (
+                                                                        <li key={linkItem + oItem}>
+                                                                            {oItem}
+                                                                        </li>
+                                                                    )
+                                                                })}
+                                                            </ul>
+                                                        </li>
+                                                    )
+                                                })}
+                                        </ul>
+                                    </li>
+                                )
+                            })}
                             <li>
                                 <div className="nav-icons d-flex">
                                     <i

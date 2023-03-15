@@ -7,4 +7,5 @@ export default {
     
     avatar_1: require('./avatar-1.jpg'),
     menuIcon: require('./menus.png'),
+    dropIcon: require('./dropIcon.png'),
 }

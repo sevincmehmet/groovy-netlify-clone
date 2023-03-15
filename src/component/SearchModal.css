@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 780px;
+    max-width: 780px;
     margin: 0 auto;
 }
 .search-modal-inp {

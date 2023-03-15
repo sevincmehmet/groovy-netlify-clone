@@ -32,20 +32,20 @@
 .logo-div {
   margin-right: 2.8rem;
 }
-
+.dropbtn:hover,
 .navsActive a:hover,
 .navs a:hover {
   color: var(--main-color);
 }
 
-.nav-item {
+/* .nav-item {
   font-size: 15px;
   color: var(--black-color);
   padding: 10px 7.5px 10px 6.5px;
-}
+} */
 
 
-
+/* 
 .dropbtn {
   color: var(--black-color);
   margin: 0 px;
@@ -64,9 +64,8 @@
 
 .dropdown-link-content {
   display: none;
-  position: absolute;
-  right: -100%;
-  top: 0;
+  position: absolute; 
+  right: -100.90%; 
   background-color: var(--white-color);
   min-width: 160px;
   z-index: 1;
@@ -77,6 +76,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 2.7rem;
   background-color: var(--white-color);
   min-width: 160px;
   z-index: 1;
@@ -92,12 +92,17 @@
   font-size: 14px;
 }
 
+
+
 .dropdown-content a:hover {
   color: var(--main-color);
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.dropdown-item:hover {
+  background-color: transparent;
 }
 
 .dropdown-item:hover .dropdown-link-content {
@@ -106,7 +111,8 @@
 
 .dropdown-item:hover .dropbtn {
   width: 200%;
-}
+  background-color: transparent;
+} */
 
 .logo-position {
   position: absolute;
@@ -165,4 +171,65 @@
   .menu-icon {
     left: 1rem;
   }
+ 
+}
+
+.nested-dropdowns {
+  /* Border */
+  border: 1px none;
+  display: flex;
+
+  /* Reset list styles */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nested-dropdowns li {
+  font-size: 15px;
+  color: var(--black-color);
+  padding: 10px 7.5px 10px 6.5px;
+  cursor: pointer;
+  /* Spacing */
+  /* padding: 0.25rem; */
+
+  /* Used to position the sub nested-dropdowns */
+  position: relative;
+}
+
+/* The sub nested-dropdowns */
+.nested-dropdowns ul {
+  /* Border */
+  border: 1px solid var(--border-color);
+
+  /* Hidden by default */
+  display: none;
+  background-color: var(--white-color);
+
+  /* Absolute position */
+  left: 0;
+  position: absolute;
+  top: 100%;
+
+  /* Reset styles */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* The second level sub nested-dropdowns */
+.nested-dropdowns ul ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+}
+
+/* Change background color of list item when being hovered */
+.nested-dropdowns li:hover {
+  color: var(--main-color);
+}
+
+/* Show the direct sub nested-dropdowns when hovering the list item */
+.nested-dropdowns li:hover > ul {
+  display: block;
 }
