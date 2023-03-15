@@ -53,15 +53,12 @@ export default [
             },
             {
                 dropdownItemLinkName: "Home Advertising Area",
-                dropdownItemsItemLink: [""],
             },
             {
                 dropdownItemLinkName: "Advertise between posts",
-                dropdownItemsItemLink: [""],
             },
             {
                 dropdownItemLinkName: "AMP Home",
-                dropdownItemsItemLink: [""],
             },
         ],
     },

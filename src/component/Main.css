@@ -4,15 +4,15 @@
 
 .fa-magnifying-glass{
     padding: 0;
-    margin-top: 0.8rem;
+    margin-top: 0.2rem;
+    cursor: pointer;
 }
 .fa-magnifying-glass:hover {
     color: var(--main-color);
-    cursor: pointer;
 }
 #footerRecentPosts {
     padding: 55px 34px 30px;
-}s
+}
 .smal-cont {
     height: auto;
     width: 95.8%;

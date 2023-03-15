@@ -1,11 +1,11 @@
 .navs {
   border-radius: 100px;
   background-color: var(--white-color);
-  margin: 3.8rem 28px 4.4rem;
+  margin: 3.8rem 10px 4.4rem;
   padding: 1.55rem 2.86rem;
   border: 1px solid var(--border-color);
   font-family: var(--Outfit);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .navsActive {
@@ -21,6 +21,8 @@
   height: 77.19px;
   display: flex;
   justify-content: space-between;
+  font-weight: 400;
+
 }
 
 .navsActive a,
@@ -37,82 +39,6 @@
 .navs a:hover {
   color: var(--main-color);
 }
-
-/* .nav-item {
-  font-size: 15px;
-  color: var(--black-color);
-  padding: 10px 7.5px 10px 6.5px;
-} */
-
-
-/* 
-.dropbtn {
-  color: var(--black-color);
-  margin: 0 px;
-  border: none;
-  background-color: var(--white-color);
-  font-weight: 300;
-  display: flex;
-  position: relative;
-  top: calc(21%);
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-link-content {
-  display: none;
-  position: absolute; 
-  right: -100.90%; 
-  background-color: var(--white-color);
-  min-width: 160px;
-  z-index: 1;
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 2.7rem;
-  background-color: var(--white-color);
-  min-width: 160px;
-  z-index: 1;
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-}
-
-.dropdown-content a {
-  color: var(--black-color);
-  padding: 10px 25px;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
-}
-
-
-
-.dropdown-content a:hover {
-  color: var(--main-color);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropdown-item:hover {
-  background-color: transparent;
-}
-
-.dropdown-item:hover .dropdown-link-content {
-  display: block;
-}
-
-.dropdown-item:hover .dropbtn {
-  width: 200%;
-  background-color: transparent;
-} */
 
 .logo-position {
   position: absolute;
@@ -148,31 +74,6 @@
   background-color: transparent;
 }
 
-@media (max-width: 1200.98px) {
-  .menu-icon {
-    display: block;
-  }
-  .logo-position {
-    position: absolute;
-    left: calc(50% - 85px);
-    
-  }
-  #searchIcon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-}
-@media (max-width: 766.98px) {
-  #searchIcon {
-    right:1rem;
-  }
-  .menu-icon {
-    left: 1rem;
-  }
- 
-}
 
 .nested-dropdowns {
   /* Border */
@@ -201,7 +102,8 @@
 .nested-dropdowns ul {
   /* Border */
   border: 1px solid var(--border-color);
-
+  border-radius: 7px;
+  z-index: 999;
   /* Hidden by default */
   display: none;
   background-color: var(--white-color);
@@ -210,11 +112,13 @@
   left: 0;
   position: absolute;
   top: 100%;
+  
 
   /* Reset styles */
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-left: 1rem;
+  width: 15rem;
 }
 
 /* The second level sub nested-dropdowns */
@@ -232,4 +136,75 @@
 /* Show the direct sub nested-dropdowns when hovering the list item */
 .nested-dropdowns li:hover > ul {
   display: block;
+}
+
+
+@media (max-width: 1200.98px) {
+  #navbarSupportedContent {
+    height: 100vh;
+    min-width: 320px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: 999;
+  }
+  .nested-dropdowns {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .nested-dropdowns ul {
+    border: none;
+    position: relative;
+    width: 270px;
+    
+  }
+  .nested-dropdowns ul li {
+    font-size: 14px;
+    color: gray;
+  }
+  .nested-dropdowns ul ul {
+      /* Border */
+  border: none;
+  border-radius: 7px;
+  z-index: 999;
+  /* Hidden by default */
+  display: none;
+  background-color: transparent;
+
+  /* Absolute position */
+  left: 0;
+  position: relative;
+  top: 100%;
+  
+
+  /* Reset styles */
+  list-style-type: none;
+  margin: 0;
+  padding-left: 1rem;
+  width: 270px;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .logo-position {
+    position: absolute;
+    left: calc(50% - 85px);
+    
+  }
+  #searchIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+@media (max-width: 766.98px) {
+  #searchIcon {
+    right:1rem;
+  }
+  .menu-icon {
+    left: 1rem;
+  }
+ 
 }

@@ -9,7 +9,7 @@ import arrCategory from "./data/arrCategory";
 
 const Navbars = ({ scrolActive, screenSize }) => {
     const [searchModalActive, setSearchModalActive] = useState(false);
-
+    const [sidebarActive, setSidebarActive] = useState(false);
     useEffect(() => {
         if (searchModalActive) {
             document.body.style.cssText = "overflow: hidden";
@@ -82,9 +82,9 @@ const Navbars = ({ scrolActive, screenSize }) => {
                     </button>
                     <div
                         className={
-                            scrolActive
-                                ? "collapse navbar-collapse ul-position"
-                                : "collapse navbar-collapse"
+                            (scrolActive && (screenSize > 1200))
+                                ? " ul-position"
+                                : ""
                         }
                         id="navbarSupportedContent"
                     >
@@ -99,14 +99,16 @@ const Navbars = ({ scrolActive, screenSize }) => {
                                                 <img src={ImagesPath.dropIcon} alt="dropIcon" width={20} />
                                             </>}
                                         </div>
-                                        <ul>
+                                        {   oItem.arrDropdownItem &&
+                                            <ul>
                                             {oItem.arrDropdownItem &&
                                                 (oItem.arrDropdownItem).map((linkItem, linkIndex) => {
                                                     return (
                                                         <li key={arrCategory + linkIndex}>
                                                             {linkItem.dropdownItemLinkName}
 
-                                                            <ul>
+                                                            {linkItem.dropdownItemsItemLink &&
+                                                                <ul>
                                                                 {linkItem.dropdownItemsItemLink && linkItem.dropdownItemsItemLink.map((oItem, oIndex) => {
                                                                     return (
                                                                         <li key={linkItem + oItem}>
@@ -115,10 +117,12 @@ const Navbars = ({ scrolActive, screenSize }) => {
                                                                     )
                                                                 })}
                                                             </ul>
+                                                            }
                                                         </li>
                                                     )
                                                 })}
                                         </ul>
+                                        }
                                     </li>
                                 )
                             })}
@@ -135,7 +139,7 @@ const Navbars = ({ scrolActive, screenSize }) => {
                                             return (
                                                 <i
                                                     key={oIndex}
-                                                    className={oItem.icon + " nav-item ms-2 me-2"}
+                                                    className={oItem.icon + " nav-item ms-3 me-3"}
                                                     style={{ color: oItem.iconColor, fontSize: "1.2rem" }}
                                                 ></i>
                                             );
