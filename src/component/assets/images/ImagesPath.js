@@ -6,4 +6,5 @@ export default {
     cateImg_4: require('./categoryImage_4.jpg'),
     
     avatar_1: require('./avatar-1.jpg'),
+    menuIcon: require('./menus.png'),
 }

@@ -37,6 +37,7 @@ form {
     position: relative;
 }
 .inputBox,
+input[type="text" i],
 input[type="email" i]  {
     height: 60px;
     padding: 15px 45px;

@@ -41,6 +41,7 @@ const Main = () => {
 
     return (
         <>
+                    
             <div className="container-xl main-cont">
                 <div className="smal-cont">
                     <Navbars scrolActive={scrolActive} screenSize={windowSize[0]} />

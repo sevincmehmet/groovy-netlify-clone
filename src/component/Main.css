@@ -2,7 +2,6 @@
     height: auto;
 }
 
-
 .fa-magnifying-glass{
     padding: 0;
     margin-top: 0.8rem;
@@ -57,6 +56,20 @@
 
 
 @media (max-width: 1200.98px) {
+    #navLogo {
+        position: absolute;
+        left: calc(50% - 85px);
+        top: calc(50% - 20px);
+    }
+    .navsActive #navLogo {
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .navs {
+        height:88px;
+    }
     .write-cont-title a {
         font-size: 28px;
     }
@@ -82,9 +95,7 @@
     .profile {
         opacity: 0;
     }
-    /* .right-cont {
-        padding-left: 40px;
-    } */
+ 
     .img-cont img {
         width: 250px;
     }
@@ -97,9 +108,19 @@
     .recent-cont .article .underline-effect .recent-title {
         font-size: 13px;
     }
-    
+    #footerTagCloud {
+        padding-left: 30px;
+        margin-top: 1.7rem;
+    }
+    #footerFollowMe {
+        padding-left: 10px;
+        margin-top: 1.7rem;
+    }
 }
 @media (max-width: 1023.98px) {
+    .navs {
+        margin: 60px 0 20px;
+    }
     .write-cont-article {
         margin-top: 2.5rem;
         margin-bottom: 2.5rem;

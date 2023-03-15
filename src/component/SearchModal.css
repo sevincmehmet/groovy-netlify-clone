@@ -9,7 +9,26 @@
     right: 0;
     left: 0;
 }
-
+.modal-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 780px;
+    margin: 0 auto;
+}
+.search-modal-inp {
+    width: 90%;
+    margin: 0 auto;
+}
+.searchIcn {
+    position: absolute;
+    top: 0.1rem;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    right: 3.4rem;
+}
 /* ! kapanma efekti */
 .scale-out-center-off {
     -webkit-animation: scale-out-center-off 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
