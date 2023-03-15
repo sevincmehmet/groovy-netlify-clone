@@ -126,6 +126,7 @@
   width: 41px;
   position: absolute;
   right: 2.7rem;
+  cursor: pointer;
 }
 
 #searchIcon img {

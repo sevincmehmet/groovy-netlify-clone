@@ -67,7 +67,9 @@ const Navbars = ({ scrolActive, screenSize }) => {
                             alt="logo"
                         />
                     </a>
-                    <div id="searchIcon">
+                    <div id="searchIcon" onClick={()=> {
+                        setSearchModalActive(!searchModalActive)
+                    }} >
                         <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcklEQVR4nO2WwUpCQRiFL5lusnYJvYL1Dtm6FhnlK4hhaT1F+BpmPUoQbbIgJW3fWhe1+uK3c2FWysxcJMgDAxfunP8bZv575ibJSn9FQAGoAXfAAJhq2HNP7wpZQ0+AMYs1AqpZANeAjlP4GbgEysCGxi7QAvrOvBvzxoA7KvQF1OcV0yIbmjuDx2wvKrTv4as48OOQRhrLXA9Y9Lm870Dex1hzztT7rIAc8KIapz7Ge5kufKFOjbZq3PqYhjKVI8DW7aaBj2kiUzECvKkak2WDt0LAwwy2ei/tbB9TT6ZWBPhaNbohn1M/4nN6VY0z3wAZydgIADfltRBa9zVXZbb4q3j4DoBveY98Fz2TbpkUbjGYS+Zvb9OBfgKlJET83jgpHMVgW+FQ1LDuvXLONIWm88PgJrtlFPiL9AEcGszJ6mh43gLfshd4U8hMtaCuda/bSJnCfQVsO38mttid5L/AS862Py4N7MCfgIelgldKpB/hgvXNldcwtQAAAABJRU5ErkJggg=="
                             alt=""
