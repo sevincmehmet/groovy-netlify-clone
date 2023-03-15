@@ -158,3 +158,11 @@
 
   }
 }
+@media (max-width: 766.98px) {
+  #searchIcon {
+    right:1rem;
+  }
+  .menu-icon {
+    left: 1rem;
+  }
+}
