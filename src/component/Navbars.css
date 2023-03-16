@@ -137,9 +137,14 @@
 .nested-dropdowns li:hover > ul {
   display: block;
 }
-
+.sidebar-close{
+  display: none;
+}
 
 @media (max-width: 1200.98px) {
+  .sidebar-close {
+    display: block;
+  }
   .fa-magnifying-glass{
     display: none;
   }
