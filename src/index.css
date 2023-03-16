@@ -39,7 +39,7 @@ body {
  background-position: left, right;
  background-size: 23% 90%;
  background-repeat: no-repeat, no-repeat;
- background-attachment: fixed, fixed 
+ background-attachment: fixed, fixed; 
 }
 
 code {

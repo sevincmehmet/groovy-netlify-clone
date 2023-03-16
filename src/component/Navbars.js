@@ -10,6 +10,8 @@ import arrCategory from "./data/arrCategory";
 const Navbars = ({ scrolActive, screenSize }) => {
     const [searchModalActive, setSearchModalActive] = useState(false);
     const [sidebarActive, setSidebarActive] = useState(false);
+    const [bgColor, setBgColor] = useState("")
+
     useEffect(() => {
         if (searchModalActive) {
             document.body.style.cssText = "overflow: hidden";
@@ -18,8 +20,18 @@ const Navbars = ({ scrolActive, screenSize }) => {
         }
     }, [searchModalActive]);
 
+useEffect(()=>{
+    if(sidebarActive) {
+        setBgColor("rgb(153,153,153)")
+    } else {
+        setBgColor("#fff")
+    }
+},[sidebarActive])
+
     return (
+        
         <>
+            <div className={sidebarActive?"fullScreen":""}></div>
             <div
                 className={
                     searchModalActive == true
@@ -53,8 +65,9 @@ const Navbars = ({ scrolActive, screenSize }) => {
                         ? "navsActive navbar navbar-expand-xl navbar-light "
                         : "navs navbar navbar-expand-xl navbar-light "
                 }
+                style={{backgroundColor:bgColor}}
             >
-                <div className={scrolActive ? "container-fluid" : "container-fluid"}>
+                <div className="container-fluid">
 
 
                     <a

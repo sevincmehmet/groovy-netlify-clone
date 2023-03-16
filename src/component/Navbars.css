@@ -6,6 +6,7 @@
   border: 1px solid var(--border-color);
   font-family: var(--Outfit);
   font-weight: 400;
+  z-index: 9;
 }
 
 .navsActive {
@@ -140,7 +141,19 @@
 .sidebar-close{
   display: none;
 }
+.fullScreen{
+  background-color: rgb(0, 0, 0,.4);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  overflow-y: hidden;
 
+}
 @media (max-width: 1200.98px) {
   .sidebar-close {
     display: block;
@@ -156,7 +169,7 @@
     border-top: 1px solid var(--border-color);
     left: 0;
     background-color: var(--white-color);
-    z-index: 999;
+    z-index: 999999;
   }
   .nested-dropdowns {
     width: 90%;
