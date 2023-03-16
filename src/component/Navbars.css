@@ -140,11 +140,15 @@
 
 
 @media (max-width: 1200.98px) {
+  .fa-magnifying-glass{
+    display: none;
+  }
   #navbarSupportedContent {
     height: 100vh;
     min-width: 320px;
     position: fixed;
-    top: 0;
+    top: 0rem;
+    border-top: 1px solid var(--border-color);
     left: 0;
     background-color: var(--white-color);
     z-index: 999;

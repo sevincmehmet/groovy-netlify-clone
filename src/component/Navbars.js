@@ -77,19 +77,21 @@ const Navbars = ({ scrolActive, screenSize }) => {
                             alt=""
                         />
                     </div>
-                    <button className="menu-icon" type="button">
+                    <button className="menu-icon" type="button" onClick={() => { setSidebarActive(!sidebarActive)}}>
                         <img src={ImagesPath.menuIcon} alt="menuIcon" />
                     </button>
                     <div
                         className={
-                            (scrolActive && (screenSize > 1200))
-                                ? " ul-position"
+                            ( (screenSize > 1200))
+                                ? " ul-position d-block"
                                 : ""
                         }
+                        style={sidebarActive && (screenSize < 1200) ? {display:"block"}:{display:"none"}}
                         id="navbarSupportedContent"
                     >
                         <ul style={{ zIndex: 9, marginLeft: 17 }} className="nested-dropdowns float-end navbar-nav me-auto mb-2 mb-lg-0">
 
+                            <li className="navbar-item" style={{fontSize:"1.2rem", position:"relative", left:"15rem"}} onClick={()=> {setSidebarActive(false)}}>X</li>
                             {arrNavItem.map((oItem, oIndex) => {
                                 return (
                                     <li className="navbar-item" key={oIndex}>
