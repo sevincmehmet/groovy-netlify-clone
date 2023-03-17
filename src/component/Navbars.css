@@ -155,6 +155,9 @@
 
 }
 @media (max-width: 1200.98px) {
+  .nested-dropdowns li:hover > ul {
+    display: none;
+  }
   .sidebar-close {
     display: block;
   }

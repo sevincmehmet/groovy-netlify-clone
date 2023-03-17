@@ -3,14 +3,14 @@ import logo from "./assets/logo-groovy.png";
 import SearchModal from "./SearchModal";
 import ImagesPath from "./assets/images/ImagesPath";
 import arrNavItem from "./data/arrNavItem";
-import arrFollow from "./data/arrFallow"
+import arrFollow from "./data/arrFallow";
 import "./Navbars.css";
 import arrCategory from "./data/arrCategory";
 
 const Navbars = ({ scrolActive, screenSize }) => {
     const [searchModalActive, setSearchModalActive] = useState(false);
     const [sidebarActive, setSidebarActive] = useState(false);
-    const [bgColor, setBgColor] = useState("")
+    const [bgColor, setBgColor] = useState("");
 
     useEffect(() => {
         if (searchModalActive) {
@@ -20,18 +20,27 @@ const Navbars = ({ scrolActive, screenSize }) => {
         }
     }, [searchModalActive]);
 
-useEffect(()=>{
-    if(sidebarActive) {
-        setBgColor("rgb(153,153,153)")
-    } else {
-        setBgColor("#fff")
-    }
-},[sidebarActive])
+    useEffect(() => {
+        if (sidebarActive) {
+            setBgColor("rgb(153,153,153)");
+        } else {
+            setBgColor("#fff");
+        }
+    }, [sidebarActive]);
+
+    const activeDropdown = (id) => {
+        document.getElementById(id)?.classList.toggle('d-block')
+    };
+
+    const sidebarControl = () => {
+        document
+            .querySelector(".nested-dropdowns li > ul")
+            .classList.toggle("d-block");
+    };
 
     return (
-        
         <>
-            <div className={sidebarActive?"fullScreen":""}></div>
+            <div className={sidebarActive ? "fullScreen" : ""}></div>
             <div
                 className={
                     searchModalActive == true
@@ -65,11 +74,9 @@ useEffect(()=>{
                         ? "navsActive navbar navbar-expand-xl navbar-light "
                         : "navs navbar navbar-expand-xl navbar-light "
                 }
-                style={{backgroundColor:bgColor}}
+                style={{ backgroundColor: bgColor }}
             >
                 <div className="container-fluid">
-
-
                     <a
                         className={scrolActive ? "logo-div logo-position" : "logo-div"}
                         href="#"
@@ -82,64 +89,105 @@ useEffect(()=>{
                             alt="logo"
                         />
                     </a>
-                    <div id="searchIcon" onClick={() => {
-                        setSearchModalActive(!searchModalActive)
-                    }} >
+                    <div
+                        id="searchIcon"
+                        onClick={() => {
+                            setSearchModalActive(!searchModalActive);
+                        }}
+                    >
                         <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcklEQVR4nO2WwUpCQRiFL5lusnYJvYL1Dtm6FhnlK4hhaT1F+BpmPUoQbbIgJW3fWhe1+uK3c2FWysxcJMgDAxfunP8bZv575ibJSn9FQAGoAXfAAJhq2HNP7wpZQ0+AMYs1AqpZANeAjlP4GbgEysCGxi7QAvrOvBvzxoA7KvQF1OcV0yIbmjuDx2wvKrTv4as48OOQRhrLXA9Y9Lm870Dex1hzztT7rIAc8KIapz7Ge5kufKFOjbZq3PqYhjKVI8DW7aaBj2kiUzECvKkak2WDt0LAwwy2ei/tbB9TT6ZWBPhaNbohn1M/4nN6VY0z3wAZydgIADfltRBa9zVXZbb4q3j4DoBveY98Fz2TbpkUbjGYS+Zvb9OBfgKlJET83jgpHMVgW+FQ1LDuvXLONIWm88PgJrtlFPiL9AEcGszJ6mh43gLfshd4U8hMtaCuda/bSJnCfQVsO38mttid5L/AS862Py4N7MCfgIelgldKpB/hgvXNldcwtQAAAABJRU5ErkJggg=="
                             alt=""
                         />
                     </div>
-                    <button className="menu-icon" type="button" onClick={() => { setSidebarActive(!sidebarActive)}}>
+                    <button
+                        className="menu-icon"
+                        type="button"
+                        onClick={() => {
+                            setSidebarActive(!sidebarActive);
+                        }}
+                    >
                         <img src={ImagesPath.menuIcon} alt="menuIcon" />
                     </button>
                     <div
-                        className={
-                            ( (screenSize > 1200))
-                                ? " ul-position d-block"
-                                : ""
+                        className={screenSize > 1200 ? " ul-position d-block" : ""}
+                        style={
+                            sidebarActive && screenSize < 1200
+                                ? { display: "block" }
+                                : { display: "none" }
                         }
-                        style={sidebarActive && (screenSize < 1200) ? {display:"block"}:{display:"none"}}
                         id="navbarSupportedContent"
                     >
-                        <ul style={{ zIndex: 9, marginLeft: 17 }} className="nested-dropdowns float-end navbar-nav me-auto mb-2 mb-lg-0">
-
-                            <li className="sidebar-close navbar-item" style={{fontSize:"1.2rem", position:"relative", left:"15rem"}} onClick={()=> {setSidebarActive(false)}}>X</li>
+                        <ul
+                            style={{ zIndex: 9, marginLeft: 17 }}
+                            className="nested-dropdowns float-end navbar-nav me-auto mb-2 mb-lg-0"
+                        >
+                            <li
+                                className="sidebar-close navbar-item"
+                                style={{
+                                    fontSize: "1.2rem",
+                                    position: "relative",
+                                    left: "15rem",
+                                }}
+                                onClick={() => {
+                                    setSidebarActive(false);
+                                }}
+                            >
+                                X
+                            </li>
                             {arrNavItem.map((oItem, oIndex) => {
                                 return (
                                     <li className="navbar-item" key={oIndex}>
-                                        <div className="nested-dropdowns__item d-flex">
+                                        <div className="nested-dropdowns__item" onClick={() => {
+                                                    activeDropdown(`${oIndex}`);
+                                                }}>
                                             {oItem.dropdownLink}
-                                            {oItem.arrDropdownItem && <>
-                                                <img src={ImagesPath.dropIcon} alt="dropIcon" width={20} />
-                                            </>}
+                                            {oItem.arrDropdownItem && (
+                                                <>
+                                                    <img
+                                                        src={ImagesPath.dropIcon}
+                                                        alt="dropIcon"
+                                                        width={20}
+                                                    />
+                                                </>
+                                            )}
                                         </div>
-                                        {   oItem.arrDropdownItem &&
-                                            <ul>
-                                            {oItem.arrDropdownItem &&
-                                                (oItem.arrDropdownItem).map((linkItem, linkIndex) => {
-                                                    return (
-                                                        <li key={arrCategory + linkIndex}>
-                                                            {linkItem.dropdownItemLinkName}
+                                        {oItem.arrDropdownItem && (
+                                            <ul
+                                                id={`${oIndex}`}
+                                                
+                                            >
+                                                {oItem.arrDropdownItem &&
+                                                    oItem.arrDropdownItem.map((linkItem, linkIndex) => {
+                                                        return (
+                                                            <li key={arrCategory + linkIndex} onClick={() => {
+                                                                activeDropdown(`${oIndex}-${linkIndex}`);
+                                                            }}>
+                                                                {linkItem.dropdownItemLinkName}
 
-                                                            {linkItem.dropdownItemsItemLink &&
-                                                                <ul>
-                                                                {linkItem.dropdownItemsItemLink && linkItem.dropdownItemsItemLink.map((oItem, oIndex) => {
-                                                                    return (
-                                                                        <li key={linkItem + oItem}>
-                                                                            {oItem}
-                                                                        </li>
-                                                                    )
-                                                                })}
-                                                            </ul>
-                                                            }
-                                                        </li>
-                                                    )
-                                                })}
-                                        </ul>
-                                        }
+                                                                {linkItem.dropdownItemsItemLink && (
+                                                                    <ul
+                                                                        id={`${oIndex}-${linkIndex}`}
+                                                                    >
+                                                                        {linkItem.dropdownItemsItemLink &&
+                                                                            linkItem.dropdownItemsItemLink.map(
+                                                                                (oItem, oIndex) => {
+                                                                                    return (
+                                                                                        <li key={linkItem + oItem}>
+                                                                                            {oItem}
+                                                                                        </li>
+                                                                                    );
+                                                                                }
+                                                                            )}
+                                                                    </ul>
+                                                                )}
+                                                            </li>
+                                                        );
+                                                    })}
+                                            </ul>
+                                        )}
                                     </li>
-                                )
+                                );
                             })}
                             <li>
                                 <div className="nav-icons d-flex">
